@@ -384,3 +384,71 @@
     border-bottom: 0;
   }
 }
+
+
+/* NovaCart accessible scrolling announcement ticker */
+.announcement-bar {
+  min-height: 34px;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 0;
+}
+
+.announcement-track {
+  display: flex;
+  flex: 0 0 auto;
+  width: max-content;
+  animation: novacart-announcement-scroll 24s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.announcement-message {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 9px 36px 9px 0;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.announcement-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes novacart-announcement-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-25%, 0, 0); }
+}
+
+@media (max-width: 640px) {
+  .announcement-bar {
+    min-height: 32px;
+  }
+
+  .announcement-message {
+    padding-block: 8px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .announcement-message[aria-hidden="true"] {
+    display: none;
+  }
+
+  .announcement-message {
+    padding-right: 12px;
+    white-space: normal;
+    text-align: center;
+  }
+}

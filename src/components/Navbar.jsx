@@ -38,12 +38,29 @@ export default function Navbar({
 
   return (
     <header className="store-header">
-      <div className="announcement-bar">
-        <p>
-          Welcome to NovaCart
-          <span className="announcement-divider">·</span>
-          Everyday shopping, made simple.
-        </p>
+      <div className="announcement-bar" role="region" aria-label="Store announcement">
+        <div className="announcement-track">
+          <p className="announcement-message">
+            Welcome to NovaCart
+            <span className="announcement-divider">·</span>
+            Everyday shopping, made simple.
+          </p>
+          <p className="announcement-message" aria-hidden="true">
+            Welcome to NovaCart
+            <span className="announcement-divider">·</span>
+            Everyday shopping, made simple.
+          </p>
+          <p className="announcement-message" aria-hidden="true">
+            Welcome to NovaCart
+            <span className="announcement-divider">·</span>
+            Everyday shopping, made simple.
+          </p>
+          <p className="announcement-message" aria-hidden="true">
+            Welcome to NovaCart
+            <span className="announcement-divider">·</span>
+            Everyday shopping, made simple.
+          </p>
+        </div>
       </div>
 
       <div className="store-header-main">
